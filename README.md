@@ -1,6 +1,6 @@
 # Trem de Carga - _Buffer Limitado_
 
-![DEMO](https://i.imgur.com/IofwNWE.gif)
+![DEMO](https://imgur.com/Q2RA0Ji.gif)
 
 Aplicação desktop desenvolvida em **_Java_** com widget toolkit GUI: **_Swing_**. Consiste em coordenar o acesso de tarefas (**Threads**) com utilização de **Semáforos** a um buffer compartilhado com capacidade de armazenamento limitada a _N_ itens.
 
