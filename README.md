@@ -1,6 +1,6 @@
 # Trem de Carga - _Buffer Limitado_
 
-![DEMO](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/demo-video/traint.gif)
+![DEMO](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/demo-video/traint.gif?raw=true)
 
 Aplicação desktop desenvolvida em **_Java_** com widget toolkit GUI: **_Swing_**. Consiste em coordenar o acesso de tarefas (**Threads**) com utilização de **Semáforos** a um buffer compartilhado com capacidade de armazenamento limitada a _N_ itens.
 
