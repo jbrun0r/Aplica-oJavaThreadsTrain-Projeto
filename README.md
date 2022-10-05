@@ -43,7 +43,7 @@ status “empacotando”.
 ## Design:
 Background:
 
-![fundo](https://i.imgur.com/3hzse9o.png)
+![fundo](https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/fundo.png)
 Imagem de Fundo desenhada por mim. Clima Semiárido contendo Mandacaru (Cactos). Foi inspirada no Sertão do Ceará.
 ___
 
