@@ -23,7 +23,7 @@ thread empacotador, lembrando que podem existir muitos empacotadores e apenas um
 
 >#### Thread Trem:
 
-<img src="https://i.imgur.com/xh7wNH4.png" width="200px"/>
+<img src="https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/trem_comvagao%20(1).png" width="200px"/>
 
 
 * **N** = quantidade de caixas que devem ser transportadas pelo trem.\
@@ -32,7 +32,7 @@ interface deve mostrar que o processo trem está executando durante todo este te
 status “viajando de A para B” ou “viajando de B para A”.
 >#### Thread Empacotador:
 
-<img src="https://i.imgur.com/NMI18D7.png" width="30px"/>
+<img src="https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/empacotador.png" width="30px"/>
 
 
 * **id** = identificador do empacotador.\
