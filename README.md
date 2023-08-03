@@ -1,61 +1,52 @@
-# Trem de Carga - _Buffer Limitado_
+# Cargo Train - Limited Buffer Simulation
 
 ![DEMO](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/demo-video/traint.gif?raw=true)
 
-Aplicação desktop desenvolvida em **_Java_** com widget toolkit GUI: **_Swing_**. Consiste em coordenar o acesso de tarefas (**Threads**) com utilização de **Semáforos** a um buffer compartilhado com capacidade de armazenamento limitada a _N_ itens.
+This is a Java desktop application with a graphical user interface (GUI) built using Swing. The application simulates a cargo train system that coordinates the transport of boxes between two locations, A and B, using multiple threads and semaphores. The train can only depart when it has accumulated a specified number of boxes, and it can transport a fixed number of boxes at a time. The packers continuously pack boxes and store them in a depot with limited capacity.
 
-## Problema:
-Um trem de carga transporta caixas com produtos entre as
-localidades **A** e **B**, mas só quando a quantidade de caixas acumuladas chegar a **_N_**. Inicialmente, o
-trem fica parado (_bloqueado_) em A enquanto não houver **_N_** caixas para transportar. Quando a
-quantidade de caixas chegar a **_N_**, o trem deve transportar exatamente **_N_** caixas de **A** para **B**, e em
-seguida voltar para **A**. Caso existam outras **_N_** caixas, o trem parte imediatamente; caso contrário,
-o trem fica parado (_bloqueado_) novamente até que existam as **_N_** caixas. Os produtos a serem
-transportados são embalados nas caixas pelos empacotadores; cada empacotador, quando tem
-uma caixa pronta, coloca a caixa em um depósito da estação de trem que tem capacidade para
-armazenar **_M_** caixas **_(M ≥ N)_**. Cada empacotador trabalha continuamente embalando caixas e
-armazenando no depósito. Quando o depósito estiver cheio, os empacotadores que tentarem
-armazenar suas caixas devem dormir (_bloqueados_). Usando semáforos, modele o thread trem e o
-thread empacotador, lembrando que podem existir muitos empacotadores e apenas um trem.
+## Problem Description:
+The cargo train is responsible for transporting boxes filled with products between locations A and B. However, the train must wait until a certain number of boxes, denoted as **_N_**, have accumulated before it departs. Once the required number of boxes is reached, the train transports exactly **_N_** boxes from A to B, then returns to A. If there are additional **_N_** boxes available, the train departs immediately; otherwise, it waits until there are enough boxes.
 
->#### Buffer:
-* **M** = quantidade de caixas que podem ser armazenadas no depósito da estação de trem.
+The boxes are packed by packers, and each packer places a packed box in a depot at the train station. The depot can store up to **_M_** boxes, where **_M ≥ N_**. The packers work continuously, packing boxes and storing them in the depot. If the depot is full, packers attempting to store boxes must wait until space becomes available. The simulation uses semaphores to model the train thread and the packer threads, with potentially many packers and only one train thread.
 
->#### Thread Trem:
+## Application Components:
 
-<img src="https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/trem_comvagao%20(1).png" width="200px"/>
+### Train Thread:
+![Train](https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/trem_comvagao%20(1).png)
 
+The train thread is responsible for transporting the boxes between locations A and B. It has the following attributes:
+- **_N_**: The number of boxes that the train must transport at a time.
+- **_tv_**: Travel time, representing the time it takes for the train to travel from A to B and vice versa. The user interface displays the status as "traveling from A to B" or "traveling from B to A" during this time.
 
-* **N** = quantidade de caixas que devem ser transportadas pelo trem.\
-* **tv** = tempo de viagem (tempo que o trem gasta para viajar de A até B e vice-versa). A
-interface deve mostrar que o processo trem está executando durante todo este tempo com o
-status “viajando de A para B” ou “viajando de B para A”.
->#### Thread Empacotador:
+### Packer Thread:
+![Packer](https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/empacotador.png)
 
-<img src="https://raw.githubusercontent.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/main/master/src/imagens/empacotador.png" width="30px"/>
-
-
-* **id** = identificador do empacotador.\
-* **te** = tempo de empacotamento (tempo que o empacotador gasta para embalar uma caixa). A
-interface deve mostrar que o empacotador está executando durante todo este tempo com o
-status “empacotando”.
+The packer threads represent the workers responsible for packing the boxes. Each packer has the following attributes:
+- **_id_**: An identifier for the packer.
+- **_te_**: Packing time, which is the time it takes for the packer to pack a single box. The user interface displays the status as "packing" during this time.
 
 ## Design:
-Background:
+The application has a visually appealing background image inspired by the Sertão of Ceará, featuring a semi-arid climate with Mandacaru (Cacti).
 
-![fundo](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/demo-video/fundo.png?raw=true)
-Imagem de Fundo desenhada por mim. Clima Semiárido contendo Mandacaru (Cactos). Foi inspirada no Sertão do Ceará.
-___
+## Minimum Requirements:
+- **JRE:** Java Runtime Environment version 15.0.2 or higher.
+- **OS:** Windows 10/11 (64-bit Required).
+- **Processor:** Dual-Core.
+- **Memory:** At least 4GB RAM.
 
-#### Requisitos mínimos:
-* **JRE:** 15.0.2
-* **SO:** Windows 10/11 (64-bit Required)
-* **Processador:** Dual Core
-* **Memória:** 4GB de RAM
----
-#### Download:
+## Installation:
+You can download the application in either JAR format or as a ZIP archive:
 
-[.JAR](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/JAR/TrainThread.jar)\
-[.zip](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/JAR/TrainThread.zip)
+- [.JAR](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/JAR/TrainThread.jar)
+- [.zip](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/JAR/TrainThread.zip)
 
+## How to Use:
+1. Ensure you have Java installed on your system and meet the minimum requirements.
+2. Download the application using the provided links.
+3. Run the downloaded JAR file.
+4. The application will open, and you can interact with the simulation using the graphical user interface.
+5. Follow the interface instructions to adjust the number of boxes, packing and travel times, and observe the train and packers' behavior.
 
+Feel free to contribute to the project or report any issues you encounter.
+
+Enjoy the cargo train simulation!
