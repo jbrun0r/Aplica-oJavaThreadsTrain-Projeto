@@ -2,7 +2,7 @@
 
 ![DEMO](https://github.com/jbrun0r/Aplica-oJavaThreadsTrain-Projeto/blob/demo-video/traint.gif?raw=true)
 
-This is a Java desktop application with a graphical user interface (GUI) built using Swing. The application simulates a cargo train system that coordinates the transport of boxes between two locations, A and B, using multiple threads and semaphores. The train can only depart when it has accumulated a specified number of boxes, and it can transport a fixed number of boxes at a time. The packers continuously pack boxes and store them in a depot with limited capacity.
+This is a Java desktop application with a graphical user interface (GUI) built using Swing. The application simulates a cargo train system that solves the classic Producer-Consumer problem by coordinating the transport of boxes between two locations, A and B, using multiple threads and semaphores. The train acts as the consumer, and the packers act as the producers.
 
 ## Problem Description:
 The cargo train is responsible for transporting boxes filled with products between locations A and B. However, the train must wait until a certain number of boxes, denoted as **_N_**, have accumulated before it departs. Once the required number of boxes is reached, the train transports exactly **_N_** boxes from A to B, then returns to A. If there are additional **_N_** boxes available, the train departs immediately; otherwise, it waits until there are enough boxes.
